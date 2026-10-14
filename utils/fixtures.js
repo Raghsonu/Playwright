@@ -7,7 +7,7 @@ const orderPayLoad = {
 orders: [{ country: 'India', productOrderedId: '6960eac0c941646b7a8b3e68' }]};
 
 exports.customtest = base.test.extend({
-authenticatedPage: async ({ browser }, use) => {
+authenticatedPage: async ({ browser }, use) => { //creating custom fixture
 const context = await browser.newContext();
 const page = await context.newPage();
 await page.goto('https://rahulshettyacademy.com/client');
@@ -21,7 +21,7 @@ await use(page);
 await context.close();
 },
 
-createOrder : async({},use)=>
+createOrder : async({},use)=>  //creating custom fixture
 {
 const apiContext = await request.newContext();
 const apiUtils = new APiUtils(apiContext,loginPayLoad);
